@@ -1,0 +1,7 @@
+/** Renders **bold** segments as <strong>; everything else stays plain text (no HTML injection). */
+export function Rich({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>{parts.map((part, i) => (part.startsWith('**') && part.endsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> : part))}</>
+  );
+}

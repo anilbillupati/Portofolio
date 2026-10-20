@@ -1,0 +1,171 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: saturate(1.6) blur(16px);
+  -webkit-backdrop-filter: saturate(1.6) blur(16px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  animation: nav-in 0.6s var(--ease-out) both;
+}
+
+.nav.is-scrolled,
+.nav.is-open {
+  border-bottom-color: var(--border);
+  box-shadow: 0 8px 24px -20px rgba(24, 24, 40, 0.35);
+}
+
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: var(--nav-h);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--gradient);
+  background-size: 200% 200%;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 6px 16px -6px var(--glow-a);
+  animation: gradient-pan 8s ease infinite;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+  color: var(--text);
+}
+
+.nav-links a:hover::after,
+.nav-links a.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-icon {
+  display: grid;
+  animation: spin-in 0.45s var(--ease-spring);
+}
+
+@keyframes spin-in {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.6);
+  }
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-actions {
+    margin-left: auto;
+  }
+  .menu-btn {
+    display: grid;
+  }
+  .nav.is-open .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 8px 16px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    animation: drop-in 0.25s var(--ease-out);
+  }
+  .nav.is-open .nav-links a {
+    padding: 12px;
+  }
+  .nav-links a::after {
+    display: none;
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name,
+  .hide-xs {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+export function Toast({ message }: { message: string | null }) {
+  return (
+    <div className="toast-region" role="status" aria-live="polite">
+      {message && (
+        <div className="toast" key={message}>
+          {message}
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,148 @@
+/* Shared keyframes and the scroll-reveal system. Component-specific motion lives next to the component. */
+
+/* Lets conic gradients rotate smoothly; browsers without @property just show a static gradient. */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-angle {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(4px);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ping {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--success) 55%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 9px transparent;
+  }
+}
+
+@keyframes drift-a {
+  50% {
+    transform: translate(120px, 80px) scale(1.15);
+  }
+}
+
+@keyframes drift-b {
+  50% {
+    transform: translate(-140px, 100px) scale(0.9);
+  }
+}
+
+@keyframes drift-c {
+  50% {
+    transform: translate(-80px, -90px) scale(1.2);
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.8s var(--ease-out);
+}
+
+.reveal-up {
+  transform: translateY(24px);
+}
+
+.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal-zoom {
+  transform: scale(0.96);
+}
+
+.reveal.is-shown {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Accessibility & print ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal,
+  .stat {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media print {
+  .reveal,
+  .stat,
+  .chip,
+  .bullets li {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

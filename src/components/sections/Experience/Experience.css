@@ -1,0 +1,286 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 36px;
+  list-style: none;
+}
+
+/* Rail that draws itself downward when the section appears */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 9px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--backend), var(--ai) 60%, transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: draw-down 1.4s var(--ease-out) 0.2s forwards;
+  animation-play-state: paused;
+}
+
+.timeline:has(.is-shown)::before {
+  animation-play-state: running;
+}
+
+@keyframes draw-down {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.timeline-item + .timeline-item {
+  margin-top: 28px;
+}
+
+.timeline-item > .reveal {
+  position: relative;
+}
+
+.timeline-node {
+  position: absolute;
+  top: 34px;
+  left: -36px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--backend);
+}
+
+.timeline-node::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
+.timeline-node.is-current {
+  animation: ring 2.4s ease-out infinite;
+}
+
+@keyframes ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--backend) 45%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 12px transparent;
+  }
+}
+
+.job {
+  padding: 30px;
+}
+
+.job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.company-logo {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: var(--gradient);
+  background-size: 200% 200%;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 24px -12px var(--glow-a);
+  animation: gradient-pan 8s ease infinite;
+}
+
+.job-title-wrap {
+  flex: 1;
+  min-width: 220px;
+}
+
+.job-title {
+  margin: 0 0 3px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.job-company {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.job-company strong {
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.job-company .sep {
+  margin: 0 2px;
+}
+
+.job-dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.job-range {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.job-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--backend-soft);
+  color: var(--backend);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: ping 2.2s ease-out infinite;
+}
+
+.work-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  padding-top: 26px;
+}
+
+.work-block h4 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-2);
+  animation: fade-up 0.5s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+.reveal:not(.is-shown) .bullets li {
+  animation-play-state: paused;
+}
+
+.bullets li::before {
+  content: '';
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.bullets li:hover::before {
+  transform: scale(1.5);
+}
+
+.bullets li.t-backend::before {
+  background: var(--backend);
+}
+
+.bullets li.t-ai::before {
+  background: var(--ai);
+}
+
+.bullets li.t-both::before {
+  background: linear-gradient(90deg, var(--backend) 50%, var(--ai) 50%);
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--focus-color);
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.chevron {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.chevron.is-flipped {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 920px) {
+  .work-blocks {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 24px;
+  }
+  .timeline::before {
+    left: 5px;
+  }
+  .timeline-node {
+    left: -24px;
+    width: 14px;
+    height: 14px;
+  }
+  .timeline-node::after {
+    inset: 2px;
+  }
+  .job {
+    padding: 22px 18px;
+  }
+  .job-dates {
+    align-items: flex-start;
+    width: 100%;
+  }
+}

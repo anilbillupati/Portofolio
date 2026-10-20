@@ -1,0 +1,116 @@
+/*
+ * Design tokens. Palette: indigo (backend) + violet (GenAI) with a sky-blue accent,
+ * on soft neutral greys. Change colors here and the whole site follows.
+ */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f8f8fb;
+  --bg-alt: #f2f2f8;
+  --surface: #ffffff;
+  --surface-2: #f4f4f9;
+  --border: #e6e6ef;
+  --border-strong: #d3d3e0;
+  --text: #16162a;
+  --text-2: #3d3d52;
+  --muted: #6b6b80;
+
+  --backend: #4f46e5;
+  --backend-soft: #eef0ff;
+  --ai: #8b3fd9;
+  --ai-soft: #f5edfd;
+  --accent-3: #0284c7;
+  --accent-3-soft: #e7f5fc;
+  --gold: #b7791f;
+  --gold-soft: #fbf3e4;
+  --focus-color: var(--backend);
+
+  --gradient: linear-gradient(120deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);
+  --gradient-text: linear-gradient(120deg, #4338ca, #7c3aed);
+  --gradient-conic: conic-gradient(from var(--angle), #4f46e5, #8b5cf6, #0ea5e9, #6366f1, #4f46e5);
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-text: #ffffff;
+  --ring: rgba(79, 70, 229, 0.28);
+  --danger: #c2334d;
+  --danger-soft: #fdecef;
+  --success: #16a34a;
+  --warning: #d97706;
+
+  --grid-dot: rgba(40, 40, 90, 0.08);
+  --glow-a: rgba(99, 102, 241, 0.22);
+  --glow-b: rgba(168, 85, 247, 0.16);
+  --glow-c: rgba(14, 165, 233, 0.13);
+  --spot: rgba(99, 102, 241, 0.08);
+
+  --contact-bg: linear-gradient(135deg, #1e1b4b 0%, #312e81 45%, #4c1d95 100%);
+  --contact-text: #eef0ff;
+  --contact-muted: #c3c6ee;
+  --contact-line: rgba(199, 210, 254, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(22, 22, 42, 0.05);
+  --shadow: 0 1px 2px rgba(22, 22, 42, 0.04), 0 10px 28px -14px rgba(40, 36, 110, 0.18);
+  --shadow-lg: 0 2px 4px rgba(22, 22, 42, 0.04), 0 30px 60px -28px rgba(40, 36, 110, 0.32);
+
+  --radius: 16px;
+  --nav-h: 64px;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0a0a14;
+  --bg-alt: #0e0e1b;
+  --surface: #13131f;
+  --surface-2: #1a1a29;
+  --border: #25253a;
+  --border-strong: #35354f;
+  --text: #f1f1f7;
+  --text-2: #cfcfdd;
+  --muted: #9797ad;
+
+  --backend: #8b8ffb;
+  --backend-soft: rgba(139, 143, 251, 0.13);
+  --ai: #c08cfa;
+  --ai-soft: rgba(192, 140, 250, 0.13);
+  --accent-3: #4cc3f5;
+  --accent-3-soft: rgba(76, 195, 245, 0.12);
+  --gold: #f0b54a;
+  --gold-soft: rgba(240, 181, 74, 0.12);
+
+  --gradient: linear-gradient(120deg, #818cf8 0%, #a78bfa 50%, #38bdf8 100%);
+  --gradient-text: linear-gradient(120deg, #a5b4fc, #c4b5fd);
+  --gradient-conic: conic-gradient(from var(--angle), #818cf8, #a78bfa, #38bdf8, #6366f1, #818cf8);
+
+  --primary: #6366f1;
+  --primary-hover: #7c7ff5;
+  --primary-text: #ffffff;
+  --ring: rgba(139, 143, 251, 0.35);
+  --danger: #f2788e;
+  --danger-soft: rgba(242, 120, 142, 0.14);
+  --success: #4ade80;
+  --warning: #fbbf24;
+
+  --grid-dot: rgba(220, 220, 255, 0.06);
+  --glow-a: rgba(99, 102, 241, 0.2);
+  --glow-b: rgba(168, 85, 247, 0.14);
+  --glow-c: rgba(56, 189, 248, 0.1);
+  --spot: rgba(139, 143, 251, 0.1);
+
+  --contact-bg: linear-gradient(135deg, #17153a 0%, #262264 45%, #3b1872 100%);
+  --contact-line: rgba(199, 210, 254, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 30px -14px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.3), 0 30px 60px -28px rgba(0, 0, 0, 0.75);
+}
+
+.app[data-focus='ai'] {
+  --focus-color: var(--ai);
+}

@@ -1,0 +1,269 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-cell {
+  display: flex;
+}
+
+.project {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.project-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- Featured project: full width, details left, highlights right ---------- */
+.project-cell.is-featured {
+  grid-column: 1 / -1;
+}
+
+.project.is-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 28px 48px;
+  padding: 34px;
+  background:
+    radial-gradient(60% 80% at 0% 0%, var(--backend-soft), transparent 60%),
+    radial-gradient(50% 70% at 100% 100%, var(--ai-soft), transparent 60%), var(--surface);
+}
+
+.project.is-featured h3 {
+  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+}
+
+.project.is-featured .metrics.is-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-bullets {
+  align-self: center;
+  gap: 18px;
+  padding-left: 32px;
+  border-left: 1px solid var(--border);
+}
+
+.project-bullets li {
+  font-size: 15px;
+}
+
+@media (max-width: 920px) {
+  .project.is-featured {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .project-bullets {
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 560px) {
+  .project.is-featured .metrics.is-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Gradient border that fades in on hover */
+.project::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project:hover::before {
+  opacity: 1;
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.project-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--backend);
+  border-color: var(--backend);
+  background: var(--backend-soft);
+}
+
+.project-link svg:last-child {
+  transition: transform 0.25s var(--ease-out);
+}
+
+.project-link:hover svg:last-child {
+  transform: translate(2px, -2px);
+}
+
+.project h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.project-sub {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.project p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-2);
+}
+
+.metric {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.project-kind svg {
+  color: var(--ai);
+}
+
+.metrics.is-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metrics.is-grid .metric {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  transition:
+    transform 0.3s var(--ease-spring),
+    border-color 0.2s ease;
+}
+
+.metrics.is-grid .metric:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+
+.metric b {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bullets-sm {
+  gap: 9px;
+}
+
+.bullets-sm li {
+  font-size: 14px;
+  animation: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: auto 0 0;
+  padding: 6px 0 0;
+  list-style: none;
+}
+
+.tag {
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.project:hover .tag {
+  border-color: var(--border-strong);
+}
+
+@media (max-width: 1020px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
