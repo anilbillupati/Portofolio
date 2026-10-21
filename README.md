@@ -35,10 +35,7 @@ The "Tailor this page for" switch reorders skills and filters experience highlig
 
 ## Resume downloads
 
-Put the PDFs here (the download buttons only appear once the files exist):
-
-- `public/resumes/Anil_Billupati_Java_Backend.pdf`
-- `public/resumes/Anil_Billupati_GenAI.pdf`
+The hero's **Download Resume** button serves `public/resumes/Anil_Billupati_Resume.pdf`. Replace that file to update the resume.
 
 ## Deploy to GitHub Pages
 

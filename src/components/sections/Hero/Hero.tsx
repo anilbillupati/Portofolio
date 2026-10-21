@@ -28,7 +28,7 @@ interface HeroProps {
 export function Hero({ profile, stats, years, focus, onFocus, onCopyLink, editing, onPhoto, onEditProfile, notify }: HeroProps) {
   const typed = useTypewriter(profile.taglines[focus] ?? []);
   const available = useAvailableFiles(profile.resumes.map((r) => r.href));
-  const resumes = profile.resumes.filter((r) => (focus === 'all' || r.track === focus) && (available[r.href] || editing));
+  const resumes = profile.resumes.filter((r) => (focus === 'all' || r.track === 'both' || r.track === focus) && (available[r.href] || editing));
   const hasResume = resumes.some((r) => available[r.href]);
   const visibleStats = stats.filter((s) => focus === 'all' || s.track === 'both' || s.track === focus).slice(0, 4);
 

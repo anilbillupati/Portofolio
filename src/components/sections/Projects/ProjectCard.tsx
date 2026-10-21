@@ -1,7 +1,7 @@
 import type { Focus, Project } from '@/types/portfolio';
 import { matchesFocus, trackClass } from '@/lib/tracks';
 import { stagger } from '@/lib/motion';
-import { ArrowUpRightIcon, GithubIcon, SparklesIcon } from '@/components/ui/Icons';
+import { ArrowUpRightIcon, GithubIcon } from '@/components/ui/Icons';
 import { Rich } from '@/components/ui/Rich';
 
 export function ProjectCard({ project: p, focus }: { project: Project; focus: Focus }) {
@@ -10,7 +10,7 @@ export function ProjectCard({ project: p, focus }: { project: Project; focus: Fo
   const metrics = p.metrics ?? [];
 
   const bulletList = bullets.length > 0 && (
-    <ul className={`bullets${p.featured ? ' project-bullets' : ' bullets-sm'}`}>
+    <ul className="bullets project-bullets">
       {bullets.map((b, i) => (
         <li key={b.text} className={trackClass(b.tracks)} style={stagger(i)}>
           <Rich text={b.text} />
@@ -20,13 +20,10 @@ export function ProjectCard({ project: p, focus }: { project: Project; focus: Fo
   );
 
   return (
-    <article className={`card project spotlight${p.featured ? ' is-featured' : ''}`}>
+    <article className="card project is-featured spotlight">
       <div className="project-main">
         <div className="project-top">
-          <span className="project-kind">
-            {p.featured && <SparklesIcon size={14} />}
-            {p.kind}
-          </span>
+          <span className="project-kind">{p.kind}</span>
           {p.link && (
             <a
               href={p.link}
@@ -56,7 +53,6 @@ export function ProjectCard({ project: p, focus }: { project: Project; focus: Fo
             ))}
           </div>
         )}
-        {!p.featured && bulletList}
         <ul className="tags" aria-label="Tech stack">
           {p.tech.map((t) => (
             <li key={t} className="tag">
@@ -65,7 +61,7 @@ export function ProjectCard({ project: p, focus }: { project: Project; focus: Fo
           ))}
         </ul>
       </div>
-      {p.featured && bulletList}
+      {bulletList}
     </article>
   );
 }

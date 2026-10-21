@@ -16,7 +16,7 @@ export function Projects({ projects, focus }: { projects: Project[]; focus: Focu
         />
         <div className="projects-grid">
           {projects.map((p, i) => (
-            <Reveal key={p.name} delay={i * 100} className={`project-cell${p.featured ? ' is-featured' : ''}`}>
+            <Reveal key={p.name} delay={i * 100} className="project-cell">
               <ProjectCard project={p} focus={focus} />
             </Reveal>
           ))}

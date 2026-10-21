@@ -1,7 +1,7 @@
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 .project-cell {
@@ -51,7 +51,9 @@
 }
 
 .project-bullets {
-  align-self: center;
+  align-self: stretch;
+  justify-content: center;
+  margin: 0;
   gap: 18px;
   padding-left: 32px;
   border-left: 1px solid var(--border);
@@ -254,16 +256,4 @@
 
 .project:hover .tag {
   border-color: var(--border-strong);
-}
-
-@media (max-width: 1020px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 680px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
 }

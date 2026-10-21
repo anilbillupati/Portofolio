@@ -5,7 +5,7 @@ export type GroupTrack = Track | 'both';
 export interface Resume {
   label: string;
   href: string;
-  track: Track;
+  track: Track | 'both';
 }
 
 export interface Profile {

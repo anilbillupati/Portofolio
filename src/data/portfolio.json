@@ -28,7 +28,7 @@
     "altEmail": "anilbillupati18@gmail.com",
     "phone": "+91 7095968028",
     "altPhone": "+91 6302454671",
-    "photo": "",
+    "photo": "profile.jpg",
     "openToWork": true,
     "links": {
       "linkedin": "https://www.linkedin.com/in/anil-billupati/",
@@ -37,109 +37,91 @@
       "hackerrank": "https://www.hackerrank.com/profile/billupatianil"
     },
     "resumes": [
-      { "label": "Java Backend Resume", "href": "resumes/Anil_Billupati_Java_Backend.pdf", "track": "backend" },
-      { "label": "GenAI Resume", "href": "resumes/Anil_Billupati_GenAI.pdf", "track": "ai" }
+      {
+        "label": "Download Resume",
+        "href": "resumes/Anil_Billupati_Resume.pdf",
+        "track": "both"
+      }
     ]
   },
   "stats": [
-    { "value": "{{years}}", "label": "Years building production systems", "track": "both" },
-    { "value": "60%", "label": "Lower API latency via Redis caching & query tuning", "track": "both" },
-    { "value": "100K+", "label": "Kafka events processed per day", "track": "both" },
-    { "value": "8+", "label": "GenAI features shipped to production", "track": "ai" },
-    { "value": "65%", "label": "Throughput gain from async processing", "track": "backend" },
-    { "value": "2×", "label": "AWS certified (Cloud & AI Practitioner)", "track": "both" }
+    {
+      "value": "{{years}}",
+      "label": "Years building production systems",
+      "track": "both"
+    },
+    {
+      "value": "60%",
+      "label": "Lower API latency via Redis caching & query tuning",
+      "track": "both"
+    },
+    {
+      "value": "100K+",
+      "label": "Kafka events processed per day",
+      "track": "both"
+    },
+    {
+      "value": "8+",
+      "label": "GenAI features shipped to production",
+      "track": "ai"
+    },
+    {
+      "value": "65%",
+      "label": "Throughput gain from async processing",
+      "track": "backend"
+    },
+    {
+      "value": "2×",
+      "label": "AWS certified (Cloud & AI Practitioner)",
+      "track": "both"
+    }
   ],
   "skills": [
-    { "id": "languages", "title": "Languages", "track": "both", "skills": ["Java", "Python", "SQL"] },
+    {
+      "id": "languages",
+      "title": "Languages",
+      "track": "both",
+      "skills": ["Java", "Python", "SQL"]
+    },
     {
       "id": "backend",
-      "title": "Backend & Frameworks",
+      "title": "Backend",
       "track": "backend",
-      "skills": [
-        "Spring Boot",
-        "Spring MVC",
-        "Spring Security",
-        "JPA",
-        "Hibernate",
-        "JWT",
-        "Microservices",
-        "REST APIs",
-        "FastAPI",
-        "Django"
-      ]
+      "skills": ["Spring Boot", "Spring Security", "JPA / Hibernate", "Microservices", "REST APIs", "JWT", "FastAPI"]
     },
     {
       "id": "genai",
-      "title": "Generative AI & LLMs",
+      "title": "Generative AI",
       "track": "ai",
       "skills": [
-        "Amazon Bedrock",
         "LangChain",
         "LangGraph",
         "RAG Pipelines",
-        "AI Agents / Agentic AI",
-        "LLM Orchestration",
-        "Prompt Engineering",
-        "Embeddings (OpenAI, Titan, Cohere, MiniLM)",
+        "AI Agents",
+        "Amazon Bedrock",
         "OpenAI API",
-        "Document Processing",
-        "Streamlit",
-        "n8n"
+        "Prompt Engineering",
+        "Hybrid Search & Reranking",
+        "RAG Evaluation"
       ]
     },
     {
-      "id": "rag",
-      "title": "RAG Engineering & Evaluation",
-      "track": "ai",
-      "skills": [
-        "Hybrid Search (BM25 + Vector)",
-        "RRF Fusion",
-        "Cohere Rerank",
-        "Chunking Strategies (semantic, agentic, hierarchical, late)",
-        "RAG Evaluation (NDCG@10, MRR, Recall@K)",
-        "Prompt-Injection Guardrails",
-        "PII Masking",
-        "Source-Cited Answers"
-      ]
-    },
-    {
-      "id": "vector",
-      "title": "Vector DBs & Search",
-      "track": "ai",
-      "skills": ["Amazon OpenSearch", "FAISS", "ChromaDB", "Pinecone", "Elasticsearch", "Semantic Search"]
-    },
-    { "id": "databases", "title": "Databases", "track": "backend", "skills": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "ClickHouse"] },
-    {
-      "id": "messaging",
-      "title": "Messaging & Data Pipelines",
+      "id": "data",
+      "title": "Databases & Search",
       "track": "both",
-      "skills": ["Apache Kafka", "Debezium (CDC)", "Asynchronous Processing", "Multithreading"]
+      "skills": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "ClickHouse", "Elasticsearch", "OpenSearch", "Pinecone", "FAISS", "ChromaDB"]
     },
     {
       "id": "cloud",
-      "title": "Cloud & DevOps",
+      "title": "Messaging, Cloud & DevOps",
       "track": "both",
-      "skills": [
-        "AWS (EC2, S3, RDS, IAM)",
-        "AWS Lambda",
-        "AWS Step Functions",
-        "Amazon Textract (OCR)",
-        "Docker",
-        "Kubernetes",
-        "CI/CD Pipelines"
-      ]
+      "skills": ["Apache Kafka", "Debezium (CDC)", "AWS", "Docker", "Kubernetes", "CI/CD"]
     },
     {
       "id": "tools",
-      "title": "APIs & Tools",
+      "title": "Tools",
       "track": "both",
-      "skills": ["Swagger / OpenAPI", "Postman", "Git", "Maven", "Claude Code", "ChatGPT"]
-    },
-    {
-      "id": "core",
-      "title": "CS Fundamentals",
-      "track": "both",
-      "skills": ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
+      "skills": ["Git", "Maven", "Postman", "Swagger / OpenAPI", "Claude Code"]
     }
   ],
   "experience": [
@@ -254,79 +236,52 @@
   "projects": [
     {
       "name": "Production RAG Platform",
-      "kind": "Featured · Generative AI",
-      "subtitle": "Hybrid-search RAG on Amazon Bedrock with automated evaluation",
-      "description": "End-to-end retrieval-augmented generation platform: an LLM-driven ingestion pipeline, hybrid retrieval with reranking, an evaluation framework that benchmarks every configuration, and production guardrails, served through a FastAPI API on AWS.",
-      "featured": true,
-      "metrics": [
-        { "value": "890+", "label": "automated tests" },
-        { "value": "9", "label": "chunking strategies" },
-        { "value": "5", "label": "embedding models" },
-        { "value": "6", "label": "document formats" }
-      ],
-      "tech": [
-        "Amazon Bedrock",
-        "OpenSearch",
-        "BM25 + Vector",
-        "RRF Fusion",
-        "Cohere Rerank",
-        "Titan Embeddings",
-        "AWS Step Functions",
-        "AWS Lambda",
-        "Amazon Textract",
-        "FastAPI",
-        "Python",
-        "CI/CD"
-      ],
+      "kind": "Personal project",
+      "subtitle": "Hybrid-search RAG on Amazon Bedrock",
+      "description": "End-to-end retrieval-augmented generation platform with an LLM-driven ingestion pipeline, hybrid retrieval with reranking, and an evaluation framework, served through a FastAPI API on AWS.",
+      "metrics": [],
+      "tech": ["Amazon Bedrock", "OpenSearch", "Cohere Rerank", "AWS Lambda", "FastAPI", "Python"],
       "bullets": [
         {
-          "text": "Architected a production **RAG system on Amazon Bedrock + OpenSearch** with hybrid **BM25 + vector retrieval**, **RRF fusion** and **Cohere reranking**, benchmarked on a ground-truth set using **NDCG@10, MRR and Recall@K**.",
+          "text": "Hybrid **BM25 + vector retrieval** on **Amazon Bedrock + OpenSearch** with **RRF fusion** and **Cohere reranking**, benchmarked with **NDCG@10, MRR and Recall@K**.",
           "tracks": ["ai"]
         },
         {
-          "text": "Engineered an LLM-driven ingestion pipeline (**AWS Step Functions, Lambda, Textract OCR**) supporting **9 chunking strategies** (semantic, agentic, hierarchical, late chunking), **5 embedding models** (Titan, Cohere) and **6 document formats**, including scanned PDFs.",
+          "text": "Ingestion pipeline on **AWS Step Functions, Lambda and Textract OCR** with **9 chunking strategies**, **5 embedding models** and **6 document formats**.",
           "tracks": ["ai", "backend"]
         },
         {
-          "text": "Built a **RAG evaluation framework** that scores chunking, embedding and reranking setups side by side, replacing manual relevance checks with automated, repeatable benchmarks.",
+          "text": "Automated **RAG evaluation framework** to compare chunking, embedding and reranking setups, replacing manual relevance checks.",
           "tracks": ["ai"]
         },
         {
-          "text": "Hardened the GenAI stack for production with **prompt-injection-safe grounding**, **PII masking** and **source-cited answers**, served through a **FastAPI** API backed by **890+ automated tests** and **CI/CD on AWS**.",
+          "text": "Production hardening with **prompt-injection-safe grounding**, **PII masking** and **source-cited answers**, backed by **890+ automated tests** and **CI/CD**.",
           "tracks": ["ai", "backend"]
         }
       ],
       "link": ""
     },
     {
-      "name": "WorkForce AI",
-      "kind": "Professional · Fission Labs",
-      "subtitle": "Workforce intelligence platform",
-      "description": "Enterprise platform for workforce optimization: skills inference, talent matching and RAG-powered analytics over large employee datasets, served by secure Spring Boot microservices.",
-      "metrics": [{ "value": "100K+", "label": "events processed daily" }],
-      "tech": [
-        "Spring Boot",
-        "Spring Security",
-        "Python",
-        "LangChain",
-        "LangGraph",
-        "RAG",
-        "Pinecone / FAISS",
-        "Kafka",
-        "AWS",
-        "Kubernetes"
+      "name": "Real-Time Analytics Platform",
+      "kind": "Personal project",
+      "subtitle": "Event-driven analytics pipeline",
+      "description": "Event-driven services on Apache Kafka for real-time data processing and asynchronous communication, with scalable analytics APIs for high-volume reporting.",
+      "metrics": [],
+      "tech": ["Apache Kafka", "Spring Boot", "PostgreSQL", "Elasticsearch", "ClickHouse"],
+      "bullets": [
+        {
+          "text": "Developed event-driven services using **Apache Kafka** for real-time data processing and asynchronous communication.",
+          "tracks": ["backend", "ai"]
+        },
+        {
+          "text": "Built scalable **analytics APIs** supporting high-volume reporting workloads.",
+          "tracks": ["backend", "ai"]
+        },
+        {
+          "text": "Designed data pipelines integrating **PostgreSQL, Elasticsearch and ClickHouse**.",
+          "tracks": ["backend", "ai"]
+        }
       ],
-      "bullets": [],
-      "link": ""
-    },
-    {
-      "name": "Skills Passport",
-      "kind": "Professional · Fission Labs",
-      "subtitle": "Skill intelligence & career insights",
-      "description": "Personalized career insights, learning paths and skill-gap analysis, backed by a CDC-driven data platform and real-time cross-platform analytics.",
-      "metrics": [{ "value": "60%", "label": "lower end-to-end latency" }],
-      "tech": ["Spring Boot", "Redis", "PostgreSQL", "Elasticsearch", "ClickHouse", "Debezium", "Kafka", "LangGraph", "OpenAI"],
-      "bullets": [],
       "link": ""
     },
     {
@@ -335,38 +290,39 @@
       "subtitle": "Fantasy cricket pool & prediction platform",
       "description": "A secure cricket pool platform that combines fantasy gaming with Generative AI for match insights and predictions.",
       "metrics": [],
-      "tech": [
-        "Spring Boot",
-        "Spring Security",
-        "JWT",
-        "PostgreSQL",
-        "Redis",
-        "Python",
-        "LangChain",
-        "LangGraph",
-        "OpenAI API",
-        "ChromaDB / Pinecone",
-        "AWS",
-        "Docker"
-      ],
+      "tech": ["Spring Boot", "JWT", "PostgreSQL", "Redis", "LangChain", "Docker"],
       "bullets": [
         {
           "text": "**JWT** authentication and role-based access control on **Spring Boot**, with accurate payout processing and duplicate-transaction prevention.",
           "tracks": ["backend"]
         },
-        { "text": "Precise booking and validation logic maintaining **100% data consistency**.", "tracks": ["backend"] },
+        {
+          "text": "Precise booking and validation logic maintaining **100% data consistency**.",
+          "tracks": ["backend"]
+        },
         {
           "text": "Match insights, player performance predictions, team recommendations and **natural-language analytics**.",
           "tracks": ["ai"]
         },
-        { "text": "LLMs, **RAG** architecture and vector search for data-driven pool entry decisions.", "tracks": ["ai"] }
+        {
+          "text": "LLMs, **RAG** architecture and vector search for data-driven pool entry decisions.",
+          "tracks": ["ai"]
+        }
       ],
       "link": "https://github.com/anilbillupati/Cricket-Pool-Game"
     }
   ],
   "certifications": [
-    { "name": "AWS Certified Cloud Practitioner", "issuer": "Amazon Web Services", "link": "" },
-    { "name": "AWS Certified AI Practitioner", "issuer": "Amazon Web Services", "link": "" }
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "link": ""
+    },
+    {
+      "name": "AWS Certified AI Practitioner",
+      "issuer": "Amazon Web Services",
+      "link": ""
+    }
   ],
   "achievements": ["Awarded **Employee of the Month** at Fission Labs for outstanding contributions to key project deliverables."],
   "education": [
