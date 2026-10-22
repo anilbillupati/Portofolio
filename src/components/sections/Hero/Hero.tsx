@@ -28,7 +28,9 @@ interface HeroProps {
 export function Hero({ profile, stats, years, focus, onFocus, onCopyLink, editing, onPhoto, onEditProfile, notify }: HeroProps) {
   const typed = useTypewriter(profile.taglines[focus] ?? []);
   const available = useAvailableFiles(profile.resumes.map((r) => r.href));
-  const resumes = profile.resumes.filter((r) => (focus === 'all' || r.track === 'both' || r.track === focus) && (available[r.href] || editing));
+  const resumes = profile.resumes.filter(
+    (r) => (focus === 'all' || r.track === 'both' || r.track === focus) && (available[r.href] || editing),
+  );
   const hasResume = resumes.some((r) => available[r.href]);
   const visibleStats = stats.filter((s) => focus === 'all' || s.track === 'both' || s.track === focus).slice(0, 4);
 
@@ -45,6 +47,9 @@ export function Hero({ profile, stats, years, focus, onFocus, onCopyLink, editin
       <div className="container">
         <div className="hero-grid">
           <div className="hero-copy">
+            <div className="enter" style={stagger(0)}>
+              <FocusSwitch focus={focus} onChange={onFocus} onCopyLink={onCopyLink} />
+            </div>
             {profile.openToWork && (
               <span className="status-pill enter" style={stagger(0)}>
                 <span className="status-dot" /> Open to new opportunities
@@ -73,10 +78,6 @@ export function Hero({ profile, stats, years, focus, onFocus, onCopyLink, editin
             <p key={`summary-${focus}`} className="hero-summary swap">
               <Rich text={fillTemplate(profile.summary[focus], { years })} />
             </p>
-
-            <div className="enter" style={stagger(5)}>
-              <FocusSwitch focus={focus} onChange={onFocus} onCopyLink={onCopyLink} />
-            </div>
 
             <div className="hero-actions enter" style={stagger(6)}>
               {resumes.map((r, i) =>

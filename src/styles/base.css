@@ -218,8 +218,8 @@ strong {
 }
 
 .btn-light {
-  background: #ffffff;
-  color: #1e1b4b;
+  background: var(--contact-btn-bg);
+  color: var(--contact-btn-text);
 }
 
 .btn-light:hover {
@@ -233,8 +233,8 @@ strong {
 }
 
 .btn-outline-light:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--contact-accent);
+  background: var(--contact-hover);
 }
 
 .btn:active:not(:disabled) {

@@ -45,10 +45,18 @@
   --glow-c: rgba(14, 165, 233, 0.13);
   --spot: rgba(99, 102, 241, 0.08);
 
-  --contact-bg: linear-gradient(135deg, #1e1b4b 0%, #312e81 45%, #4c1d95 100%);
-  --contact-text: #eef0ff;
-  --contact-muted: #c3c6ee;
-  --contact-line: rgba(199, 210, 254, 0.2);
+  --contact-bg: linear-gradient(135deg, #f1f4ff 0%, #f6f2ff 50%, #e8f4fd 100%);
+  --contact-text: #1e1b4b;
+  --contact-muted: #565b82;
+  --contact-line: rgba(79, 70, 229, 0.16);
+  --contact-accent: #4f46e5;
+  --contact-panel: rgba(255, 255, 255, 0.72);
+  --contact-icon-bg: rgba(99, 102, 241, 0.1);
+  --contact-btn-bg: #312e81;
+  --contact-btn-text: #ffffff;
+  --contact-hover: rgba(79, 70, 229, 0.08);
+  --contact-glow-a: rgba(129, 140, 248, 0.22);
+  --contact-glow-b: rgba(56, 189, 248, 0.18);
 
   --shadow-sm: 0 1px 2px rgba(22, 22, 42, 0.05);
   --shadow: 0 1px 2px rgba(22, 22, 42, 0.04), 0 10px 28px -14px rgba(40, 36, 110, 0.18);
@@ -104,7 +112,17 @@
   --spot: rgba(139, 143, 251, 0.1);
 
   --contact-bg: linear-gradient(135deg, #17153a 0%, #262264 45%, #3b1872 100%);
+  --contact-text: #eef0ff;
+  --contact-muted: #c3c6ee;
   --contact-line: rgba(199, 210, 254, 0.16);
+  --contact-accent: #c7d2fe;
+  --contact-panel: rgba(255, 255, 255, 0.06);
+  --contact-icon-bg: rgba(255, 255, 255, 0.08);
+  --contact-btn-bg: #ffffff;
+  --contact-btn-text: #1e1b4b;
+  --contact-hover: rgba(255, 255, 255, 0.1);
+  --contact-glow-a: rgba(129, 140, 248, 0.35);
+  --contact-glow-b: rgba(56, 189, 248, 0.22);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 30px -14px rgba(0, 0, 0, 0.6);
